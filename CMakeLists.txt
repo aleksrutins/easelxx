@@ -12,7 +12,7 @@ endif()
 project ("Easel++")
 
 # Add source to this project's executable.
-add_executable (Easel++   "main.cpp"  "util.h" "util.cpp" "lexer.cpp" "lexer.h" "vendor/enum.h")
+add_executable (Easel++   "main.cpp"  "util.h" "util.cpp" "lexer.cpp" "lexer.h" "vendor/enum.h" "cpp.hint")
 
 target_precompile_headers(Easel++
 	PUBLIC
@@ -26,10 +26,10 @@ target_precompile_headers(Easel++
 		<optional>
 		<variant>
 
+		vendor/enum.h
+
 		util.h
 		lexer.h
-
-		vendor/enum.h
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

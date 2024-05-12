@@ -33,6 +33,23 @@ namespace easel::lexer {
 		$EOF
 	};
 
+	enum Keywords {
+		Prepare,
+		As,
+		Brush,
+		Prep,
+		Has,
+		Sketch,
+		Needs,
+		Finished,
+		Loop,
+		Through,
+		While,
+		If,
+		Elif,
+		Else
+	};
+
 	class Token {
 	public:
 		TokenType type;
@@ -41,7 +58,7 @@ namespace easel::lexer {
 		int line;
 		int column;
 
-		Token(TokenType type, std::optional<std::string> value, std::optional<std::string> content, int line, int column)
+		Token(TokenType type, std::optional<std::string> value, std::optional<ValueType> content, int line, int column)
 			: type(type)
 			, value(value)
 			, content(content)
